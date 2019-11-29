@@ -1,3 +1,5 @@
+package chapter2
+
 const val MAX_EXPERIENCE = 500
 
 fun main( args: Array<String>) {
