@@ -18,7 +18,7 @@ fun main(args: Array<String>) {
     /* 형식 문자열 */
     val isBlessed = true
     val healthStatus4 = "경미한 상처가 있지만 빨리 치유되고 있음!"
-    
+
     val HP = "HP: $healthPoints"
     val A = "Aura: ${if(isBlessed) auraColor else ""}"
     val H = healthStatus4
