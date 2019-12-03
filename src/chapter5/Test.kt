@@ -12,4 +12,8 @@ fun main() {
 
     val numLetters4 = "Mississippi".count{it == 's'}
     print(numLetters4)
+
+    runMyRunnable { println("hey now") }
 }
+
+fun runMyRunnable(runnable:() -> Unit) = { runnable() }
