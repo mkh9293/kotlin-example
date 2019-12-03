@@ -1,6 +1,6 @@
 package chapter4
 
-fun main(args: Array<String>) {
+fun main() {
     val name = "마드리길"
     val healthPoints = 75
     val isBlessed = true
