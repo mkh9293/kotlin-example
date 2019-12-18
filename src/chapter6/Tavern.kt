@@ -4,6 +4,11 @@ fun main(args: Array<String>) {
     // ?: null 복합 연산자
     // 왼쪽 피연산자의 결과가 null 이면 오른쪽 피연산자를 실행
     // 아니면 왼쪽 결과를 반환.
+    var beverage7 = readLine()
+    beverage7?.let {
+        beverage7 = it.capitalize()
+    } ?: println("beverage가 null입니다!")
+
 
     var beverage6 = readLine()
     if(beverage6 != null) {
