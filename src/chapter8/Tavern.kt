@@ -1,5 +1,6 @@
 package chapter8
 
+import java.math.BigDecimal
 import kotlin.math.roundToInt
 
 const val TAVERN_NAME = "Taernly's Folly"
@@ -8,6 +9,11 @@ var playerGold = 10
 var playerSilver = 10
 
 fun main() {
+    println(100.12.roundToInt())
+//    val a : Float = 10.1f
+//    val b : Float = 5.91f
+////    println(a.toBigDecimal()-b.toBigDecimal())
+//    println(a-b)
     placeOrder("shandy,Dragon's Breath,5.91")
 }
 
