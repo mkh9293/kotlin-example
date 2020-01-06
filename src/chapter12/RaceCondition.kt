@@ -9,9 +9,9 @@ class Player2 {
     // 여러 스레드에서 weapon 값을 동시에 바꿔질 수 있기 때문에 (race condition)
     // 스마트 캐스팅을 할 수 없어서 error
     fun printWeaponName2() {
-        if( weapon != null ) {
-            println(weapon.name)
-        }
+//        if( weapon != null ) {
+//            println(weapon.name)
+//        }
     }
 
     // also를 사용하는 순간부터 it 는 지역변수가 됨. ( "?." 안전호출연산자로 null 이 아닌 값으로 확인)
