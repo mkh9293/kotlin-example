@@ -1,4 +1,4 @@
-package chapter12
+package chapter13
 
 class Player3(_name: String,
               var healthPoints: Int,
@@ -10,9 +10,9 @@ class Player3(_name: String,
             field = value.trim()
         }
 
-//    val healthPoints = _healthPoints
-//    val isBlessed = _isBlessed
-//    private val isImmotal = _isImmotal
+    constructor(name: String) : this (name, healthPoints= 100, isBlessed = true, isImmotal = false) {
+        if (name.toLowerCase() == "kar") healthPoints = 40
+    }
 
     fun castFireball(numFireballs: Int = 2) =
         println("한 덩어리의 파이어볼이 나타난다. (x$numFireballs)")
