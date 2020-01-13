@@ -1,14 +1,29 @@
 package chapter13
 
+import java.io.File
+
 class Player3(_name: String,
               var healthPoints: Int,
               val isBlessed: Boolean,
               private val isImmotal: Boolean) {
     var name = _name
-        get() = field.capitalize()
+        get() = "${field.capitalize()} of $hometown"
         private set(value) {
             field = value.trim()
         }
+
+    val hometown by lazy { selectHometown() }
+
+    private fun selectHometown() = File("data/towns.txt")
+                                    .readText()
+                                    .split("\r\n")
+                                    .shuffled()
+                                    .first()
+
+    init {
+        require(healthPoints > 0, {"healthPoints는 0보다 커야 합니다."})
+        require(name.isNotBlank(), {"플레이어는 이름이 있어야 합니다."})
+    }
 
     constructor(name: String) : this (name, healthPoints= 100, isBlessed = true, isImmotal = false) {
         if (name.toLowerCase() == "kar") healthPoints = 40
