@@ -50,9 +50,55 @@ class PremadeWorldMap {
 }
 ```
 
+<br>
 ---
 
 #### 중첩 클래스
 
+코틀린의 중첩 클래스는 외곽 클래스가 생성되어야 하며, 외곽 클래스에서는 중첩 클래스의 속성과 함수를 사용할 수 있다.  
 
+
+<br>
+---
+
+#### 데이터 클래스
+
+데이터 클래스는 데이터를 저장하기 위해 특별히 설계된 클래스.  
+(강력한 데이터 처리기능을 가지고 있음.)  
+
+데이터 클래스는 toString() 함수를 따로 재정의하지 않아도 자동으로 만들어준다.  
   
+또한 equals() 메소드도 재정의해주기 때문에 Coordinate(1, 2) == Coordinate(1, 2) 가 false가 아닌  
+true 가 된다. (참고로 기본 생성자에 정의된 속성만으로 비교됨.)  
+
+copy() 메소드도 자동 생성해줌.  
+(새로운 인스턴스 복제가 간단해짐.)
+```kotlin
+val mortalPlayer = player.copy(isimmotal = false)
+```
+
+
+데이터 클래스는 toString, equals, hashCode, copy 함수가 필요없을 때에는 사용할 필요가 없다.  
+(다시 말해서 위 함수들을 쉽게 사용할 용도일 경우만 데이터 클래스로 정의하면 된다.)  
+  
+<br>
+---
+
+#### enum 클래스
+
+일련의 상숫값을 정의하는 열거형 타입을 정의할 때 사용.  
+java 와 비슷한듯.?  
+
+
+<br>
+---
+
+#### 질문.
+
+291p 에 아래 함수를 호출하는 Game.kt 에서 리턴타입이 없는데도 newPosition 변수에서 받고 있다.  
+역컴파일 해보면 java로 리턴되도록 되어 있는건 확인함.  
+리턴 타입이 없는데도 어떻게 리턴되도록 되어있는가..  
+ 
+```kotlin
+fun updateCoordinate(playerCoordinate: Coordinate) = coordinate + playerCoordinate
+```
