@@ -1,6 +1,7 @@
 package chapter18
 
 import java.io.File
+import extensions.random
 
 const val TAVERN_NAME = "Taernyl's Folly"
 
@@ -9,6 +10,7 @@ val lastName = listOf("Ironfoot", "Fernsworh", "Baggins")
 var menuList = File("data/tavern-menu-items.txt").readText().split("\r\n")
 
 val uniquePatrons = mutableSetOf<String>()
+
 fun main() {
     (0..9).forEach {index ->
         val first = patronList.random()
